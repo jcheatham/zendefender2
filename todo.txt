@@ -1,0 +1,30 @@
+* large title text
+* change gameover to greenscreen
+* replace startscreen objects
+* camera orbit controls (mouseY to control x rotation, mouseX to control y rotation, mouseWheel to control Z?)
+* tower drag UX indication
+* more towers
+* more enemies
+* tower upgrades
+* more attacks
+* particles on enemy destruction
+* improve lighting
+* shadows?
+* camera effects
+* different levels/terrains
+
+links
+http://threejs.org/docs/
+http://localhost:3006/examples/#webgl_interactive_draggablecubes
+
+http://stemkoski.github.io/Three.js/index.html#model
+https://raw.github.com/stemkoski/stemkoski.github.com/master/Three.js/models/android-animations.js
+view-source:http://stemkoski.github.io/Three.js/Model-Animation-Control.html
+
+http://learningthreejs.com/blog/2013/04/30/closing-the-gap-between-html-and-webgl/
+http://learningwebgl.com/blog/
+http://tutorialzine.com/2013/09/20-impressive-examples-for-learning-webgl-with-three-js/
+http://gamedev.tutsplus.com/articles/how-to-learn/how-to-learn-three-js-for-game-development/
+http://www.lighthouse3d.com/tutorials/glsl-core-tutorial/
+http://www.airtightinteractive.com/2013/02/intro-to-pixel-shaders-in-three-js/
+

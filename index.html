@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Zendefender 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+      body {
+        background:#444;
+        color:#fff;
+        padding:0;
+        margin:0;
+        overflow:hidden;
+        font-family:georgia;
+        text-align:center;
+      }
+
+      #canvas-align {
+        background:#000;
+        position: relative;
+        width: 840px;
+        height: 480px;
+        margin: auto;
+      }
+
+      #info {
+        position: absolute;
+        top: 0px; width: 100%;
+        padding: 5px;
+        font-family: Monospace;
+        font-size: 13px;
+        text-align: center;
+        z-index:100;
+      }
+
+      #startUI {
+        color:red;
+        top:210px;
+        width: 100%;
+        font-size:3em;
+        font-variant:small-caps;
+        font-weight:bold;
+        position:absolute;
+        z-index:100;
+        text-align: center;
+        text-shadow: #000 0px 0px 10px;
+        display:none;
+      }
+
+      #start {
+        color:#fff;
+        text-shadow: #000 0px 0px 2px;
+        padding:0.1em 0.3em;
+        width:3em;
+        text-align: center;
+        display:none;
+      }
+
+      .shadow {
+        -moz-box-shadow: 0px 0px 5px #000;
+        -webkit-box-shadow: 0px 0px 5px #000;
+        box-shadow: 0px 0px 5px #000;
+      }
+
+      #progressbar {
+        text-align: center;
+        background: white;
+        width: 250px;
+        height: 10px;
+      }
+
+      #bar {
+        background:#d00;
+        width:50px;
+        height:10px;
+      }
+
+      .enabled {
+        color: lime!important;
+        cursor:pointer;
+      }
+
+      .enabled:hover {
+        text-shadow: #0f0 0px 0px 5px !important;
+      }
+
+      .disabled {
+        background:gray;
+        cursor:default;
+      }
+
+      a { color:red }
+      canvas { z-index:10; }
+
+      .part {
+        display:none;
+        padding:0 0 0.5em 2em;
+      }
+
+      #gameUI {
+        position:absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        z-index: 3;
+        display: none;
+      }
+      #money-display {
+        position:absolute;
+        cursor:pointer;
+        top: 30px;
+        left: 80%;
+        width: 19%;
+        text-align:right;
+      }
+      #health-display {
+        position:absolute;
+        cursor:pointer;
+        top: 10px;
+        width: 19%;
+        left: 80%;
+        text-align:right;
+      }
+      #upgrade-display {
+        position:absolute;
+        cursor:pointer;
+        display:none;
+      }
+      #exit-button {
+        position:absolute;
+        cursor:pointer;
+        top: 100px;
+        width: 10%;
+        left: 89%;
+        text-align: right;
+      }
+      #purchase-display {
+        border: 1px;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 40px;
+        cursor: pointer;
+      }
+      #purchase-item0 {
+        margin-bottom: 10px;
+      }
+      #purchase-item1 {
+        margin-bottom: 10px;
+        display: none;
+      }
+      #purchase-item2 {
+        margin-bottom: 10px;
+        display: none;
+      }
+      #purchase-item3 {
+        margin-bottom: 10px;
+        display: none;
+      }
+      #gameover-display {
+        font-size: 3em;
+        font-variant: small-caps;
+        font-weight: bold;
+        cursor: pointer;
+        color: lime!important;
+        text-align: center;
+        text-shadow: #000 0px 0px 2px;
+        top:210px;
+        width: 100%;
+        z-index:100;
+        position:absolute;
+      }
+      #gameover-display:hover {
+        text-shadow: #0f0 0px 0px 5px !important;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="info">
+      <a href="http://zendesk.com">Zendefender 2</a> The Rezenge
+    </div>
+    <br>
+    <div id="content-frame">
+      <div id="canvas-container">
+        <div id="canvas-align">
+          <canvas id="webgl-canvas"></canvas>
+          <div id="startUI">
+            <span id="message">Loading ...</span>
+            <center>
+              <div id="progressbar" class="shadow"><div id="bar" class="shadow"></div></div>
+              <div id="start" class="disabled">Start</div>
+            </center>
+          </div>
+          <div id="gameUI">
+            <div id="money-display">$100</div>
+            <div id="health-display">Karma: 20</div>
+            <div id="upgrade-display">Upgrades Here</div>
+            <div id="exit-button">Give up</div>
+            <div id="purchase-display">
+              <div id="purchase-item0">Support Ninja</div>
+              <div id="purchase-item1">Item 1</div>
+              <div id="purchase-item2">Item 2</div>
+              <div id="purchase-item3">Item 3</div>
+            </div>
+            <div id="gameover-display">GAME OVER</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="three.min.js"></script>
+    <script src="Detector.js"></script>
+    <script src="stats.min.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
